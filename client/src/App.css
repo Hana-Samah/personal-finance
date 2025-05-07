@@ -1,42 +1,119 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+/* ✅ Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+body,
+html {
+  font-family: 'Poppins', sans-serif;
+  background-color: #fef9f9;
+  color: #333;
+  min-height: 100vh;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+/* ✅ App Container */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 0 1rem;
+}
+
+/* ✅ Shorter & Flat Navbar */
+.navbar {
+  background: linear-gradient(90deg, #8ec5fc, #e0c3fc);
+  width: 95%;
+  margin: 1rem auto;
+  padding: 0.5rem 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 45px;
+  position: sticky;
+  top: 10px;
+  z-index: 100;
+}
+
+/* ✅ Navbar Link Style */
+.navbar a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  margin-right: 1rem;
+  padding: 6px 10px;
+  border-radius: 6px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.navbar a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: scale(1.05);
+}
+
+/* ✅ User Button (Clerk) */
+.clerk-user-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* ✅ Auth Buttons (inline layout) */
+.sign-in-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+}
+
+/* ✅ Remove heading from sign-in container */
+.sign-in-container h1 {
+  display: none;
+}
+
+.sign-in-container button {
+  background-color: #caffbf;
+  color: #333;
+  border: none;
+  padding: 6px 14px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.sign-in-container button:hover {
+  background-color: #b9fbc0;
+}
+
+/* ✅ Responsive: Keep same level on small screens */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    height: auto;
+    padding: 0.6rem 1rem;
   }
-  to {
-    transform: rotate(360deg);
+
+  .navbar a {
+    margin: 0.3rem 0.5rem;
+    font-size: 0.95rem;
   }
-}
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+  .sign-in-container {
+    flex-direction: row;
+    gap: 8px;
+    margin-top: 0;
   }
-}
 
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
+  .sign-in-container button {
+    font-size: 0.85rem;
+    padding: 6px 12px;
+  }
 }
